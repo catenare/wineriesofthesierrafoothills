@@ -1,0 +1,13 @@
+DEBUG = True
+SECRET_KEY = "aws secret key"
+JSMAIN = "main"
+# FLATPAGES_AUTO_RELOAD = DEBUG
+# FLATPAGES_EXTENSION = '.md'
+# FLATPAGES_ROOT = 'content'
+FREEZER_IGNORE_MIMETYPE_WARNINGS = False
+FREEZER_RELATIVE_URLS = True
+FREEZER_DESTINATION = "../build"
+FREEZER_REMOVE_EXTRA_FILES = True
+FREEZER_STATIC_IGNORE = ['components','js/apps','js/lib/','js/main.js']
+GOOGLE_DEVELOPER_KEY = 'google developer key'
+GOOGLE_BLOGGER_ID = 'google blogger id'
