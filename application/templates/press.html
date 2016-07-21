@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block nav_links %}
+    {% include "includes/nav_bar.links_other.html" %}
+{% endblock %}
+{% block content %}
+<section id="news" class="news">
+    <h1>Press Room</h1>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="media">
+                <div class="media-left media-top">
+                    <a href="http://thetahoeweekly.com" target="_blank">
+                        <img class="media-object" src="{{ url_for('static', filename='images/news/TahoeWeekly_web.jpg')}}" alt="Tahoe Weekly Logo">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <a class="text-center" href="http://thetahoeweekly.com/2016/01/23399/" target="_blank"><h3>Jan. 14 to Jan. 27 Issue</h3></a>
+                    <figure class="thumbnail">
+                        <img class="img-responsive center-block img-rounded" src="{{ url_for('static', filename='images/news/tahoe_weekly_full_page.jpg')}}" alt="Tahoe Weekly Full Page">
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="media">
+                <div class="media-left media-top">
+                    <h2>Images for Download</h2>
+                </div>
+            <div class="media-body text-center">
+                <ul class="list-inline">
+                    <li><a href="{{ url_for('static', filename='images/press/WSF_FrontCover.jpg')}}" target="_blank">jpeg</a></li>
+                    <li><a href="{{ url_for('static', filename='images/press/WSF_FrontCover.tiff')}}" target="_blank">tiff</a></li>
+                    <li><a href="{{ url_for('static', filename='images/press/WSF_FrontCover.pdf')}}" target="_blank">pdf</a></li>
+                </ul>
+                    <figure class="thumbnail">
+                        <img class="img-responsive center-block img-rounded" src="{{ url_for('static', filename='images/press/WSF_FrontCover.jpg')}}" alt="Front Cover">
+                    </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

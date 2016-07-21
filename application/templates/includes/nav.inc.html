@@ -1,0 +1,34 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" id="navbar-scroll">
+    <div class="container-fluid">
+    	<div class="navbar-header">
+    		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
+    		    <span class="sr-only">Toggle navigation</span>
+    		    <span class="icon-bar"></span>
+    		    <span class="icon-bar"></span>
+    		    <span class="icon-bar"></span>
+    		  </button>
+    		  <a class="navbar-brand hidden-xs" href="{{ url_for('index') }}#home">Wineries of the Sierra Foothills</a>
+    		  <div class="navbar-brand">
+    		    <a class="btn-default btn-sm btn-primary buy-the-book-hidden" href="https://squareup.com/store/wineries-of-the-sierra-foothills" target="_blank">Buy the book!</a>
+    		  </div>
+    	</div>
+        <div class="collapse navbar-collapse" id="main-navbar">
+        	<form class="navbar-form navbar-right hidden-md" role="email" action="//wineriesofthesierrafoothills.us11.list-manage.com/subscribe/post?u=a0cbc5a2fbe3d5adb955a6743&amp;id=721bb194c1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div class="form-group">
+                <input type="email" value="" id="mce-EMAIL" id="mce-EMAIL" name="EMAIL" class="form-control" placeholder="Email signup" required>
+                <!--
+                    Be in the Know
+Sign up for savings, news, updates
+                    -->
+                </div>
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                  <input type="text" name="b_a0cbc5a2fbe3d5adb955a6743_721bb194c1" tabindex="-1" value="">
+                </div>
+                <button type="submit" value="Subscribe" name="subscribe" class="btn btn-default">Submit</button>
+            </form>
+            {% block nav_links %}
+                {% include "includes/nav_bar.links_home.html" %}
+            {% endblock %}
+        </div>
+    </div>
+</nav>

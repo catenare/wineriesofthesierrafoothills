@@ -1,0 +1,40 @@
+
+.gallery a {
+//     display: inline-block;
+   // width: 15%;
+    padding-bottom: 1em;
+    display: block;
+    width: 7em;
+}
+
+.gallery a, .galelry a:hover {
+    outline: none;
+}
+
+.gallery a:hover img {
+    opacity: 0.3;
+}
+
+/*
+img#gallery-main {
+    @extend .img-thumbnail;
+}
+
+img.gallery-thumbnail {
+    @extend .img-thumbnail;
+}
+*/
+
+
+img.gallery-thumbnail-active{
+    opacity: (0.40);
+}
+
+
+a.gallery-thumbnail-link {
+   display: inline-block;
+//    padding-right: 1em;
+}
+
+
+

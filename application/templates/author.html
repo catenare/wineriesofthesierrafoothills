@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block nav_links %}
+    {% include "includes/nav_bar.links_other.html" %}
+{% endblock %}
+{% block content %}
+<section class="author bg_about" id="author" class="container-fluid">
+  <h1>About the Author</h1>
+	<div class="row">
+		<div class="col-md-5 col-md-offset-1">
+			<img class="img-responsive center-block img-thumbnail" src="{{ url_for('static', filename='images/bio/barbara-bio-1.jpg' ) }}" alt="Barbara with John MacCready">
+			<div class="caption">
+				<h3>
+					Barbara Keck with John MacCready
+				</h3>
+				<p>
+					John MacCready, Owner-Winermaker at Sierra Vista Winery in El Dorado County, was key to Barbara's learning about the Sierra Foothills, its wines, vineyards and people.
+				</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-md-offset-1 panel">
+
+					<h2>
+						Barbara Keck
+					</h2>
+					<p>
+						Barbara Keck has been writing about wines, with a particular love and orientation toward Sierra Foothills wineries, for many years. She writes a wine column for The Tahoe Weekly newspaper. A longtime writer and journalist, Barbara earned her MBA in Agribusiness and Marketing from Harvard Business School. She has also consulted with several start-up wineries to enhance their marketing programs. Informative and thorough, this book will unabashedly promote wines from this region.
+					</p>
+
+		</div>
+	</div>
+</section>
+{% endblock %}

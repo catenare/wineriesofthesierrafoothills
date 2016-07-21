@@ -1,0 +1,52 @@
+<project name="SetupComponents" default="copy_components" basedir=".">
+    <description>
+        Basic setup file
+    </description>
+  <!-- set global properties for this build -->
+
+
+  <property name="web"              location="application/static" />
+  <property name="bower"            location="bower_components" />
+  <property name="require"          location="${bower}/requirejs" />
+  <property name="jquery"           location="${bower}/jquery/dist" />
+  <property name="bootstrap"        location="${bower}/bootstrap-sass/assets" />
+  <property name="jquery-ui"        location="${bower}/jquery-ui" />
+  <property name="hammerjs"         location="${bower}/hammerjs" />
+  <property name="jquery-hammerjs"  location="${bower}/jquery-hammerjs" />
+  <property name="jslib"            location="${web}/js/lib" />
+  <property name="jquery_easing"    location="${bower}/jquery.easing/js" />
+
+  <echo message="We're working here..." />
+
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+
+        <exec executable="compass">
+          <arg value="clean" />
+        </exec>
+
+  </target>
+
+
+
+
+  <target name="copy_components" description="copy files over">
+      <echo message="copying files over files over" />
+      <!--  make directories -->
+      <delete dir="${jslib}"/>
+      <mkdir  dir="${jslib}"/>
+
+     <copy file="${require}/require.js" todir="${jslib}" />
+     <copy file="${jquery}/jquery.js" todir="${jslib}" />
+     <copy file="${bootstrap}/javascripts/bootstrap.js" todir="${jslib}" />
+     <copy file="${jquery-ui}/jquery-ui.js" todir="${jslib}" />
+     <copy file="${jquery_easing}/jquery.easing.js" todir="${jslib}" />
+     <copy file="${hammerjs}/hammer.js" todir="${jslib}" />
+     <copy file="${jquery-hammerjs}/jquery.hammer.js" todir="${jslib}" />
+     <copy file="${bootstrap}/stylesheets/_bootstrap.scss" todir="sass" />
+
+  </target>
+
+</project>

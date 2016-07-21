@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 	<meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:url" content="http://www.wineriesofthesierrafoothills.com">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Wineries of the Sierra Foothills">
+	<meta property="og:title" content="Wineries of the Sierra Foothills - Risk Takers and Rule Breakers">
+	<meta property="og:description" content="John put his kids and suitcases and a 15 gallon drum of fermenting wine into his Chevy and drove from Ohio to the Sierra Foothills. That&rsquo;s the kind of passion for wine-making and risk-taking behavior that characterize the 250 wineries in this part of California. Preceding the most complete guide ever to wineries in the 10 Sierra Foothills counties are 21 compelling &ldquo;why we did it&rdquo; stories.">
+	<meta property="og:image" content="http://www.wineriesofthesierrafoothills.com/static/images/share/front_cover_fb.jpg">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="630">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@wineriessierra">
+	<meta name="twitter:creator" content="@catenarellc">
+	<meta name="twitter:title" content="Wineries of the Sierra Foothills - {% block title %}Risk Takers and Rule Breakers{% endblock %}">
+	<meta name="twitter:description" content='The most complete guide ever to wineries in the 10 Sierra Foothills counties are 21 compelling &ldquo;why we did it&rdquo; stories.'>
+	<meta name="twitter:image" content="http://www.wineriesofthesierrafoothills.com/static/images/share/front_cover_twitter.jpg">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Wineries of the Sierra Foothills - Risk Takers and Rule Breakers</title>
+
+<!-- Bootstrap -->
+	<link href="{{ url_for('static', filename='styles/styles.css') }}" rel="stylesheet">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<!-- 	<link href="bower_components/lightslider/dist/css/lightslider.css" rel="stylesheet"> -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    {% block nav %}
+        {% include "includes/nav.inc.html" %}
+    {% endblock %}
+<main class="container-fluid">
+    {% block content %}
+    <section id="home" class="bg_home">
+    	<div class="row">
+    		<div class="col-sm-offset-1 col-sm-5">
+    			<h1 class="text-capitalize text-center">
+    				Wineries of the Sierra Foothills
+    			</h1>
+    			<h2 class="text-capitalize text-center">
+    				Risk-Takers And Rule Breakers!
+    			</h2>
+    			<p>
+    				<span class="lead">John put his kids and suitcases and a 15 gallon drum of fermenting wine into his Chevy and drove from Ohio to the Sierra Foothills.</span> That’s the kind of passion for wine-making and risk-taking behavior that characterize the 250 wineries in this part of California. Preceding the most complete guide ever to wineries in the 10 Sierra Foothills counties are 21 compelling “why we did it” stories.
+    			</p>
+    			<div class="text-center">
+    				<a class="btn btn-primary pre-order" href="https://squareup.com/store/wineries-of-the-sierra-foothills" target="_blank">Order Now!</a>
+    			</div>
+    			<h3 class="text-center">
+    				Critics are saying...
+    			</h3>
+    			<blockquote class="artist-quote">
+    				<p>
+    					“An enriching book that highlights the triumphs and struggles of starting a winery….this book is a great way to learn more about this special winemaking region.” <br>
+    					<cite>Dr. Liz Thach, MW, Author-Call of the Vine, Distinguished Professor of Wine & Management, Sonoma State University, CA</cite>
+    				</p>
+    				<p>
+    					“​Finally a book about the wines and winemakers of the Sierra Foothills…long overdue … the willingness to push boundaries by trying new things is one of the reasons the Sierra Foothills is one of the most exciting wine regions today.”<br>
+    					<cite>Cyril Penn, Editor, Wine Business Monthly Magazine</cite>
+    				</p>
+    				<p>
+    					'Risk-Takers & Rule-Breakers' is an apt subtitle for Barbara Keck's affectionate and concise "Wineries of the Sierra Foothills." … the region is home to a surprisingly broad and assured range of grape varieties and wine styles.”<br>
+    					<cite>Mike Dunne, Wine Writer, Wine Judge, Contributing Wine Columnist for The Sacramento Bee</cite>
+    				</p>
+    			</blockquote>
+    		</div>
+    		<div class="col-sm-offset-1 col-sm-5">
+    			<figure class="book-cover">
+    				<img src="{{ url_for('static', filename='images/cover.jpg') }}" alt="book cover" width="427" height="640">
+    			</figure>
+    		</div>
+    	</div>
+    </section>
+    {% endblock %}
+</main>
+<footer>
+    {% block footer %}
+    {% include "includes/footer.inc.html" %}
+    {% endblock %}
+</footer>
+<script data-main="/static/js/{{g.js_file}}" src="{{ url_for('static', filename='js/lib/require.js') }}">
+</script>
+</body>
+</html>

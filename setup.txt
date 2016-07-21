@@ -1,0 +1,15 @@
+Setting up project for development.
+
+Need
+- npm
+- bower
+
+- npm install
+- bower install
+
+ant - will copy files to js/lib and the scss file to sass folder
+
+- run compass compile
+
+- ready for development
+

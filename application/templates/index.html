@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="home" class="home">
+	<div class="row">
+		<div class="col-sm-6">
+			<h1 class="text-capitalize text-center">
+				Wineries of the Sierra Foothills
+			</h1>
+			<h2 class="text-capitalize text-center">
+				Risk-Takers And Rule Breakers!
+			</h2>
+			<p>
+				<span class="lead">John put his kids and suitcases and a 15 gallon drum of fermenting wine into his Chevy and drove from Ohio to the Sierra Foothills.</span> That’s the kind of passion for wine-making and risk-taking behavior that characterize the 250 wineries in this part of California. Preceding the most complete guide ever to wineries in the 10 Sierra Foothills counties are 21 compelling “why we did it” stories.
+			</p>
+
+			<div class="text-center">
+                <figure class="book-cover book-cover-mobile visible-xs-block">
+				    <a href="#preview"><img class="img-responsive" src="{{ url_for('static', filename='images/cover.jpg') }}" alt="book cover"></a>
+                </figure>
+				<a class="btn btn-primary pre-order btn-lg" href="https://squareup.com/store/wineries-of-the-sierra-foothills" target="_blank">Buy The Book!</a>
+			</div>
+			<h3 class="text-center">
+				Critics are saying...
+			</h3>
+			<blockquote class="artist-quote">
+				<p>
+					“An enriching book that highlights the triumphs and struggles of starting a winery….this book is a great way to learn more about this special winemaking region.” <br>
+					<cite>Dr. Liz Thach, MW, Author-Call of the Vine, Distinguished Professor of Wine & Management, Sonoma State University, CA</cite>
+				</p>
+				<p>
+					“​Finally a book about the wines and winemakers of the Sierra Foothills…long overdue … the willingness to push boundaries by trying new things is one of the reasons the Sierra Foothills is one of the most exciting wine regions today.”<br>
+					<cite>Cyril Penn, Editor, Wine Business Monthly Magazine</cite>
+				</p>
+				<p>
+					'Risk-Takers & Rule-Breakers' is an apt subtitle for Barbara Keck's affectionate and concise "Wineries of the Sierra Foothills." … the region is home to a surprisingly broad and assured range of grape varieties and wine styles.”<br>
+					<cite>Mike Dunne, Wine Writer, Wine Judge, Contributing Wine Columnist for The Sacramento Bee</cite>
+				</p>
+			</blockquote>
+		</div>
+		<div class="col-sm-5 col-sm-offset-1 hidden-xs">
+			<figure class="book-cover">
+				<a href="#preview"><img class="img-responsive" src="{{ url_for('static', filename='images/cover.jpg') }}" alt="book cover"></a>
+			</figure>
+		</div>
+	</div>
+</section>
+ 
+{% if events.count() > 0 %}
+<section id="events" class="events">
+      <h2 class="header-title">Meet The Author Events</h2>
+      <ul class="media-list row">
+        {% for event in events %}
+        <li class="media col-lg-6 col-md-12">
+            <div class="media-left media-top">
+              <a href="http://{{event['url']}}" target="_blank">
+                <img class="media-object" src="{{ url_for('static', filename='images/events/'~event['photo'])}}" alt="{{event['photo']}}">
+              </a>
+            </div>
+            <div class="media-body">
+            <h4 class="media-heading"><a href="http://{{event['url']}}" target="_blank">{{event['title']|title}}</a></h4>
+            <h5>{{event['time']}}</h5>
+            <h5>{{event['date']|format_date}}</h5>
+            <p>{{event['description']}}</p>
+            {% if event['tickets'] != "none" %}
+            <p>
+              <a href="{{event['tickets']}}" target="_blank">Tickets or more information</a>
+            </p>
+            {% endif %}
+          <address>
+            {% if event['venue_url'] != "none" %}
+            <a href="{{ event['venue_url'] }}" target="_blank">{{event['venue']|title}}</a><br>
+            {% else %}
+            {{event['venue']|title}}<br>
+            {% endif %}
+            {{event['address']|title}}
+          </address>
+        </div>
+        </li>
+        {% endfor %}
+      </ul>
+</section>
+{% endif %}
+<section id="buy" class="buy">
+    <h2 class="header-title">Buy The Book</h2>
+    <div class="list-group row">
+      {% set current_county = "" %}
+    {% for store in stores %}
+        {% if current_county != store['county'] %}
+          <div class="list-group-item col-lg-12 col-sm-12 col-md-12 col-xs-12">
+            <h4>{{ store['county'] |title}}</h4>
+            {% set current_county = store['county'] %}
+          </div>
+          <div class="list-group-item col-lg-4 col-sm-6">
+        {% else %}
+          <div class="list-group-item col-lg-4 col-sm-6">
+          {% endif %}
+        <a href="http://{{ store['url']}}" target="_blank">{{ store['venue']}}</a>
+        <address>
+          {{store['street']}}<br>
+          {{store['city']}}, {{store['state']}} {{store['zip']}}
+        </adress>
+      </div>
+    {% endfor %}
+    </div>
+</section>
+
+<section id="preview" class="preview gallery">
+        <h2 class="header-title">Book Preview <small class="visible-sm visible-xs">Tap or swipe to see more</small></h2>
+            <div class="row">
+
+
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                        <img id="gallery-main" class="img-responsive center-block img-thumbnail" data-index="0" src="{{ url_for('static', filename='images/PreviewImages/fullsize/preview_pages_01.jpg')}}" alt="{{image}}">
+                </div>
+
+                <div class="col-md-5 col-md-offset-1 hidden-xs hidden-sm">
+                {% for image in thumbnails %}
+                        <a class="gallery-thumbnail-link" href="#">
+                            <img class="gallery-thumbnail img-thumbnail img-responsive" data-title="{{image}}" src="{{ url_for('static', filename='images/PreviewImages/thumbnails/'~image)}}" alt="{{image}}">
+                        </a>
+                {% endfor %}
+                </div>
+            </div>
+</section>
+
+
+{% endblock %}

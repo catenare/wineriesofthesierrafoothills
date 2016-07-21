@@ -1,0 +1,4 @@
+- Update build.xml with fastclick copy over
+- Setup js with fastclick - https://github.com/ftlabs/fastclick
+- var FastClick = require('fastclick');
+FastClick.attach(document.body, options);

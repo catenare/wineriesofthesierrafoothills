@@ -1,0 +1,8 @@
+{
+    "directory": "application/static/components",
+    "analytics": true,
+    "color": true,
+    "scripts": {
+   "postinstall": "node_modules/bower-requirejs/bin/bower-requirejs.js -d -c application/static/js/main.js -e requirejs"
+  }
+}

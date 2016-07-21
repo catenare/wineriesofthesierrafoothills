@@ -1,0 +1,183 @@
+{% endblock %}
+
+                {% for image in gallery %}
+                    <div class="col-md-2 col-sm-4">
+                        <figure class="thumbnail">
+                    <a class="gallery-image" href="{{url_for('static',filename='img/gallery/fullsize/'~image)}}"><img class="img-responsive" src="{{url_for('static',filename='img/gallery/thumbnail/'~image)}}" alt="{{image}}"></a> 
+                        </figure>
+                    </div>
+                {% endfor %}
+                
+
+
+id="preview" class="bg_preview_gallery"
+
+
+
+https://gist.github.com/simonsmith/4353587 - amd/jquery
+
+
+// UMD dance - https://github.com/umdjs/umd
+!function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(['jquery'], factory);
+  } else {
+    factory(root.jQuery);
+  }
+}(this, function($){
+        
+        'use strict';
+        
+        var name = "gallery";
+        
+        Plugin.prototype = {
+            defaults: {
+                main: 'display-image',
+                fullsize_path: 'images',
+                path_location: location.origin,
+                active_class:   "gallery-thumbnail-active",
+                select_class:   "gallery-thumbnail",
+            },
+            addActiveClass: function(){
+                console.log("hello");
+                return "hello active";
+            }
+        };
+/*
+        Plugin.prototype.addActiveClass = function(){
+                console.log($scope);
+                $($scope.options.select_class).removeClass($scope.options.active_class);
+                console.log()
+                $scope.$element.addClass($scope.options.active_class);
+                console.log($scope.options.path_location + $scope.options.fullsize_path + "/" + $scope._text );
+            };
+*/
+        
+        function Plugin(element, options){
+          console.log(this.addActiveClass());
+          var $scope = this;
+          $scope.$element   = $(element);
+          $scope.element    = element;
+          $scope.options    = $.extend({}, this.defaults, options);
+          
+          $scope.init = function(){
+            var image_path = $scope.options.image_path;
+            $scope._text = (typeof $scope.$element.data('title') != "undefined") ? $scope.$element.data('title') : $scope.$element.prop("title");
+            if (typeof $scope._text != "undefined"){  
+                       
+                $scope.$element.on("click", function(){
+//                     console.log(Plugin.defaults);
+                    //this.addActiveClass();
+                });
+            }
+            
+           
+          }  
+        };
+        
+        
+        
+        $.fn[name] = function(options){
+            return this.each(function(){
+                new Plugin(this, options).init();
+                }
+            )
+        };
+        
+                
+    });
+    
+    
+   <!--             <li><a href="{{ url_for('index') }}">Home</a></li> -->
+<!--             <li><a href="{{ url_for('events') }}">Events</a></li> -->
+
+<!--             <li><a href="{{ url_for('news') }}">In The News</a></li> -->         
+    <!--
+            <li><a href="#preview">Book Preview</a></li>
+    		<li><a href="#events">Events</a></li>
+    		<li><a href="#buy">Where to Buy</a></li>
+    		<li><a href="#author">Meet the Author</a></li>
+    -->
+    <!--
+    		<li><a href="{{ url_for('index') }}">Home</a></li>
+    		<li><a href="{{ url_for('events') }}">Events</a></li>
+    		<li><a href="{{ url_for('buy') }}">Where to Buy</a></li>
+    		<li><a href="{{ url_for('author') }}">Meet the Author</a></li>
+    		<li><a href="{{ url_for('preview') }}">Preview</a></li>
+    		<li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+    		<li><a href="{{ url_for('privacy') }}">Privacy</a></li>
+    -->
+    
+<div class="container-fluid">
+        <div class="row">
+        	<div class="col-lg-4 col-xs-6">
+        		<h3 class="copyright">
+        			&copy;2015 Barbara Keck. All Rights Reserved
+        		</h3>
+        	</div>
+        	<div class="col-lg-4 col-xs-6">
+        
+        <!-- Begin MailChimp Signup Form -->
+        <!--                         <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css"> -->
+        		<div id="mc_embed_signup" class="subscribe-form pull-left">
+        			<form class="form-inline" action="//wineriesofthesierrafoothills.us11.list-manage.com/subscribe/post?u=a0cbc5a2fbe3d5adb955a6743&amp;id=721bb194c1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        				<div id="mc_embed_signup_scroll">
+        					<label for="mce-EMAIL">Get Notified!</label>
+        					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+        
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        					<div style="position: absolute; left: -5000px;" aria-hidden="true">
+        						<input type="text" name="b_a0cbc5a2fbe3d5adb955a6743_721bb194c1" tabindex="-1" value="">
+        					</div>
+        					<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-sm">
+        				</div>
+        			</form>
+        		</div>
+        	</div>
+        	
+        	<div class="col-lg-4 hidden-xs">
+        		<div class="social-buttons btn-group" role="group" aria-label="social media buttons">
+        			<a type="button" class="btn btn-sm" target="_blank" href="https://twitter.com/wineriessierra"> 
+            			<img src="{{ url_for('static', filename='images/icons/twitter.png') }}"> 
+                    </a> 
+        <!-- 				<a type="button" class="btn btn-sm" target="_blank" href="https://instagram.com/sierrafoothillswineries/"> <img src="images/icons/instagram.png"> </a> --> <!-- <a type="button" class="btn btn-sm" target="_blank" href="http://wineriesofthesierrafoothills.tumblr.com/"> <img src="images/icons/tumblr.png"> </a> --> 
+                    <a type="button" class="btn btn-sm" target="_blank" href="https://www.facebook.com/sierrafoothillwineries/"> 
+                        <img src="{{ url_for('static', filename='images/icons/facbook.png') }}"> 
+                    </a>
+        		</div>
+        	</div>
+        	
+        </div>
+    </div>
+
+
+<!--
+<div class="container-fluid footer">
+    <div class="row">
+       
+        <div class="col-lg-3">
+            <ul class="panel">
+                <li>twitter</li>
+                <li>facebook</li>
+                <li>instagram</li>
+                <li>email</li>
+            </ul>
+        </div>    
+        
+        <div class="col-lg-4 col-lg-offset-1">
+            <h3>From the Blog</h3>
+            <ul class="panel">
+            {% for post in g.posts['items'] %}
+    
+                <li>
+                    <a href="{{ post['url'] }}" target="_blank">{{ post['title'] }}</a>
+                    <span>{{ post['published'] }}</span>
+                    <p>{{ post['content']|striptags|truncate(200) }}</p>
+                </li>
+              
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+-->

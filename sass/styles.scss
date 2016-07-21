@@ -1,0 +1,28 @@
+// Import Bootstrap Compass integration
+@import "bootstrap-compass";
+
+// Import custom Bootstrap variables
+@import "bootstrap-variables";
+
+@import "my_vars";
+@import "my_vars2";
+
+// Import Bootstrap for Sass
+@import "bootstrap";
+
+/*
+@import "font-awesome-compass";
+@import "font-awesome";
+*/
+
+// Import parallax
+//@import "parallax";
+
+@import "gallery";
+@import "footer";
+@import "contests";
+@import "recipes";
+//Custom css
+@import "custom";
+
+

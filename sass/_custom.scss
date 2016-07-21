@@ -1,0 +1,147 @@
+body {
+    padding-top: 2.5em;
+    position: relative;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #fff;
+}
+
+
+/*
+main {
+    position: relative;
+}
+*/
+
+.book-cover {
+    @extend .center-block;
+    width: 75%;
+    padding-top: 5em;
+}
+
+/*
+.book-cover-small {
+    @extend .book-cover;
+}
+*/
+
+.book-cover img {
+    @extend .img-responsive;
+    @extend .img-thumbnail;
+    transform: rotate(5deg);
+}
+
+.book-cover-mobile img {
+    @extend .img-responsive;
+    transform: rotate(0deg);
+}
+
+.pre-order {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.artist-quote {
+    margin: 10px;
+    font-size: 1em;
+}
+
+
+.container-fluid {
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+.copyright {
+    color: #c5c5c6;
+    font-size: 18px;
+}
+footer {
+    padding-top: 1em;
+}
+footer .subscribe-form form {
+    @extend .center-block;
+    padding-top: 1em;
+}
+
+.subscribe-form form label {
+    color: #c5c5c6;
+    font-size: 18px;
+    font-weight:600;
+}
+
+footer div.social-buttons img {
+    width: 50%;
+}
+
+
+footer div.social-buttons a.btn {
+    padding-left: 0;
+}
+
+footer div.media-left img.media-object{
+  width: 10em;
+}
+
+.bottom-footer{
+    background-color: #5D3430;
+}
+
+.bottom {
+    margin-top: 20px;
+}
+
+.events .media-list li {
+    list-style: none;
+}
+
+li.media {
+    padding-bottom: 2em;
+}
+
+.media-right {
+    @extend .text-center;
+}
+div.events {
+    padding-top: 2em;
+}
+
+#events div.media-right, #events div.media-left{
+    @extend .hidden-sm;
+    @extend .hidden-xs;
+}
+
+#events div.media-left img.media-object, #news div.media-left img.media-object{
+  width: 10em;
+}
+
+#events .media {
+  margin-top: 0;
+}
+
+.preview h1, .author h1 {
+    @extend .text-center
+    }
+
+section .header-title {
+  padding-top: 2em;
+  padding-bottom: .2em;
+  margin-bottom: 1em;
+  margn: 0;
+  border-bottom: 1px solid $gray-dark;
+}
+
+section .top-header-title {
+//   padding-top: 1em;
+/*
+  padding-bottom: .2em;
+  margin-bottom: 1em;
+  margn: 0;
+  border-bottom: 1px solid $gray-dark;
+*/
+}
+
+footer {
+  margin-top: 4em;
+  background-color: rgba($gray-dark, 0.3);
+}

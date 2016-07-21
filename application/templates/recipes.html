@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="recipes" class="recipe">
+<!--     <h2 class="header-title">Book Recipes <small class="visible-sm visible-xs">Tap or swipe to see more</small></h2> -->
+
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="panel-heading">
+        <h3 class="panel-title">Wineries of the Sierra Foothills Recipes</h3>
+    </div>
+    <div class="row">
+        {% for image in recipe_images %}
+        <div class="col-sm-6 col-lg-3">        
+            <div class="recipe-wrapper">
+                <div class="thumbnail">
+                  <img src="{{ url_for('static', filename='images/recipes/'~image)}}" alt="{{ image }}">
+                  <div class="caption">
+                    <h3>Recipe Title</h3>
+                    <p>Biltong incididunt pork belly do, ut kielbasa filet mignon shankle chuck tri-tip tail. Rump short loin landjaeger anim salami cillum bresaola voluptate tempor elit id porchetta short ribs. Reprehenderit cillum rump fugiat drumstick pork belly exercitation commodo anim biltong. Enim nostrud cow tenderloin, salami cupidatat biltong nisi. Sint pork belly picanha pig commodo quis magna, duis cillum. Andouille elit deserunt, dolore id t-bone voluptate cupidatat dolore eiusmod enim.</p>
+                    <p><a href="#openModal" class="btn btn-default" role="button">See Recipe</a></p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- Modal Info -->
+
+<div id="openModal" class="modalDialog">
+	<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<div class="well">
+		<h3>Recipe Title</h3>
+                    <p>Biltong incididunt pork belly do, ut kielbasa filet mignon shankle chuck tri-tip tail. Rump short loin landjaeger anim salami cillum bresaola voluptate tempor elit id porchetta short ribs. Reprehenderit cillum rump fugiat drumstick pork belly exercitation commodo anim biltong. Enim nostrud cow tenderloin, salami cupidatat biltong nisi. Sint pork belly picanha pig commodo quis magna, duis cillum. Andouille elit deserunt, dolore id t-bone voluptate cupidatat dolore eiusmod enim.</p>
+		</div>
+	</div>
+</div>
+
+</section>
+{% endblock %}

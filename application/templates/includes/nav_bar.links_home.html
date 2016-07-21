@@ -1,0 +1,7 @@
+<ul class="navbar-nav nav navbar-right">
+    {% if events.count() > 0 %}
+    <li><a href="{{ url_for('index') }}#events">Events</a></li>
+    {% endif %}
+    <li><a href="{{ url_for('index') }}#buy">Buy the Book</a></li>
+    <li><a href="{{ url_for('index') }}#preview">Preview the Book</a></li>
+</ul>   

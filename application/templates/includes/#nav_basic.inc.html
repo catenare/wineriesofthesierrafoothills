@@ -1,0 +1,28 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" id="navbar-scroll">
+    <div class="container-fluid">
+    	<div class="navbar-header">
+    		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
+    		    <span class="sr-only">Toggle navigation</span>
+    		    <span class="icon-bar"></span>
+    		    <span class="icon-bar"></span>
+    		    <span class="icon-bar"></span>
+    		  </button>
+    		  <a class="navbar-brand hidden-xs" href="{{ url_for('index') }}">Wineries of the Sierra Foothills</a>
+    	</div>
+
+    	<form class="navbar-form navbar-right" role="email">
+            <div class="form-group">
+            <input type="text" class="form-control" placeholder="Email Signup">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+            <ul class="navbar-nav nav navbar-right">
+                <li><a href="{{ url_for('index') }}#events">Events</a></li>
+                <li><a href="{{ url_for('index') }}#buy">Buy the Book</a></li>
+                <li><a href="{{ url_for('index') }}#preview">Preview the Book</a></li>
+<!--
+                 <li><a href="#news">In the News</a></li>
+                 <li><a href="#author">About the Author</a></li>
+-->
+        	</ul>    </div>
+</nav>

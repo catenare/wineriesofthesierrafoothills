@@ -1,0 +1,24 @@
+{
+  "name": "sierrafoothillswineries",
+  "version": "0.0.1",
+  "description": "Assets for Sierra Foothills Wineries",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git-catenare@seed2.projectlocker.com:WineriesProject.git"
+  },
+  "keywords": [
+    "wineries",
+    "website",
+    "sierrafoothills"
+  ],
+  "author": "Johan Martin",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
